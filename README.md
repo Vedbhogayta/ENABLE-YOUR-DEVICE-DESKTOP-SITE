@@ -126,7 +126,34 @@ h1 {
     border-radius: 10px; /* Add rounded corners for a colorful box effect */
     display: inline-block; /* Make it an inline-block to center-align it properly */
 }
+body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #222;
+        }
 
+ .animation-container {
+            text-align: ;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
     <center><h1>Choose Your Currunt Mood</h1>
     <button id="happyButton">Happy</button>
@@ -146,6 +173,10 @@ h1 {
     <button id="spirit">spirit</button>
 
     <p id="adviceText"></p>
+    <div class="animation-container">
+        <div class="loader"></div>
+        <p>Please wait for 10 seconds...</p>
+    </div>
 
     <script>
          // Function to provide mood advice
@@ -263,6 +294,14 @@ document.getElementById("spirit").addEventListener("click", function() {
     provideMoodAdvice("spirit");
 });
 
-        
+        // Function to redirect to the second page after 10 seconds
+        function redirectToSecondPage() {
+            window.location.href = "second_page.html";
+        }
+
+        // Add event listeners to each button (like in your original code)
+
+        // Call redirectToSecondPage after a 10-second delay
+        setTimeout(redirectToSecondPage, 10000); // 10000 milliseconds = 10 seconds
     </script>
 
