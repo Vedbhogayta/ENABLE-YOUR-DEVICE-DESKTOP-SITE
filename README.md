@@ -81,9 +81,7 @@ P{
 
 
 <br>
-<p id="adviceText"></p>
-    <div class="animation-container">
-        <div class="loader"></div>
+
       
     </div>
     <script>
